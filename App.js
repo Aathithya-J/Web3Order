@@ -1,30 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaView style={{backgroundColor: '#DDB982'}}>
-    <View>
-      <Text style={{
-        color: "black", 
-        textAlign: 'center', 
-        paddingTop: 100, 
-        fontSize:40, 
-        fontWeight:'bold'
-        }}>your perfect Brew!
-      </Text>  
-      <Text style={{
-        color: "black", 
-        textAlign: 'center', 
-        paddingBottom:10, 
-        fontSize:20, 
-        }}>lorem ipusm!
-      </Text>  
-      <StatusBar style="auto"/>
-      <Button title="sign in" color="#841584"/>
-      <Button title="dont have an account?" color="#841584"/>
-      <Button title="create account" color="#841584"/>
+    <View style={styles.container}>
+      <Image source={require('./assets/Tea.png')}
+        />
+      <Text style={styles.title}>brew perfect tea!</Text>
+      <TouchableHighlight style={styles.radius}>
+        <Text style={[styles.button]}>Sign Up?</Text>
+      </TouchableHighlight>
+      <Button title='dont have an account?' />
+      <TouchableHighlight style={styles.radius}>
+        <Text style={[styles.button]}>Login?</Text>
+      </TouchableHighlight>
+      <StatusBar style="auto" />
     </View>
-  </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EDE0D4',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    color: "black",
+    fontSize:20,
+    fontWeight:800
+  },
+  button: {
+    //backgroundColor: "#9C6644",
+    color: 'white',
+    fontWeight: 'bold',
+    paddingHorizontal: 50,
+    paddingVertical: 10
+  },
+  radius: {
+    backgroundColor: "#9C6644",
+    border: "none",
+    borderRadius: 200,
+    borderWidth: 0
+
+  }
+});

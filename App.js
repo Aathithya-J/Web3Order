@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, I
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
+import Create from './screens/create';
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -12,13 +13,13 @@ function App() {
       <Image source={require('./assets/Tea.png')}/> 
       {/*Image for the cup above*/}
       <Text style={styles.title}>brew perfect tea!</Text>
-      <TouchableHighlight style={styles.radius}>
-        <Text style={styles.button}>Sign Up?</Text>
+      <TouchableHighlight style={styles.radius} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.button}>Sign In?</Text>
       </TouchableHighlight>
       {/*Button for sign up*/}
       <Button title='dont have an account?' />
-      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.button}>Login?</Text>
+      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Create")}>
+        <Text style={styles.button}>create account?</Text>
       </TouchableOpacity>
       {/*Button for login up*/}
       <StatusBar style="auto" />
@@ -33,26 +34,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 150
+    //Container is the whole screen with the stuff inside
   },
-  //Container is the whole screen with the stuff inside
   title: {
     color: "black",
     fontSize:35,
     fontWeight:700,
     paddingBottom: 20,
-    
+    //Title of "Brew Perfect tea"
   },
   button: {
     color: 'white',
     fontWeight: 'bold',
     paddingHorizontal: 100,
     paddingVertical: 10
+    //Button for Login & Create Account
   },
   radius: {
     backgroundColor: "#9C6644",
     border: "none",
     borderRadius: 200,
     borderWidth: 0
+    //Button radiis
   },
 });
 
@@ -62,9 +65,12 @@ function Stacks() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={App} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Create" component={Create}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
+  //Include all screens so as to link them
 }
 
 export default Stacks
+//include export default for all files

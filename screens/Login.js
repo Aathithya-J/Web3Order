@@ -3,10 +3,10 @@ import { StyleSheet, Text, View,  SafeAreaView, TextInput } from 'react-native';
 
 
 function Login(){
-  const [text, onChangeText] = React.useState('Useless Text');
+  const [text, onChangeText] = React.useState('Login');
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Sign in</Text>
+      <Text style={styles.title}>Sign in</Text> 
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}

@@ -9,15 +9,18 @@ function App() {
   const navigation = useNavigation()
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/Tea.png')}/>
+      <Image source={require('./assets/Tea.png')}/> 
+      {/*Image for the cup above*/}
       <Text style={styles.title}>brew perfect tea!</Text>
       <TouchableHighlight style={styles.radius}>
         <Text style={styles.button}>Sign Up?</Text>
       </TouchableHighlight>
+      {/*Button for sign up*/}
       <Button title='dont have an account?' />
       <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Login")}>
         <Text style={styles.button}>Login?</Text>
       </TouchableOpacity>
+      {/*Button for login up*/}
       <StatusBar style="auto" />
     </View>
   );
@@ -31,6 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 150
   },
+  //Container is the whole screen with the stuff inside
   title: {
     color: "black",
     fontSize:35,

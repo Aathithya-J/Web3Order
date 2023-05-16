@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { StyleSheet, Text, View,  SafeAreaView, TextInput } from 'react-native';
 
@@ -13,7 +14,8 @@ function Create(){
         onChangeText={onChangeText}
         value={text}
       />
-    </SafeAreaView>
+      <StatusBar style="auto" />
+    </SafeAreaView> 
   );
 }
 const styles = StyleSheet.create({

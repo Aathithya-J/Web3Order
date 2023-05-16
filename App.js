@@ -1,19 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, Image, Link } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from './screens/Login';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+function App() {
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/Tea.png')}
-        />
+      <Image source={require('./assets/Tea.png')}/>
       <Text style={styles.title}>brew perfect tea!</Text>
       <TouchableHighlight style={styles.radius}>
         <Text style={styles.button}>Sign Up?</Text>
       </TouchableHighlight>
       <Button title='dont have an account?' />
-      <TouchableHighlight style={styles.radius}>
+      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Login")}>
         <Text style={styles.button}>Login?</Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -31,7 +35,8 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize:35,
     fontWeight:700,
-    paddingBottom: 20
+    paddingBottom: 20,
+    
   },
   button: {
     color: 'white',
@@ -46,3 +51,16 @@ const styles = StyleSheet.create({
     borderWidth: 0
   },
 });
+
+function Stacks() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={App} options={{headerShown: false}}/>
+        <Stack.Screen name="Login" component={Login}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default Stacks

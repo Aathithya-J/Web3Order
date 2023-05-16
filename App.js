@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, I
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
-import Create from './screens/create';
+import newacc from './screens/newacc';
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -12,12 +12,14 @@ function App() {
     <View style={styles.container}>
       <Image source={require('./assets/Tea.png')}/> 
       {/*Image for the cup above*/}
+
       <Text style={styles.title}>brew perfect tea!</Text>
       <TouchableHighlight style={styles.radius} onPress={() => navigation.navigate("Login")}>
         <Text style={styles.button}>Sign In?</Text>
       </TouchableHighlight>
       {/*Button for sign up*/}
-      <Button title='dont have an account?' />
+
+      <Button title='dont have an account?' onPress={() => navigation.navigate("Create")}/>
       <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Create")}>
         <Text style={styles.button}>create account?</Text>
       </TouchableOpacity>
@@ -46,7 +48,8 @@ const styles = StyleSheet.create({
   button: {
     color: 'white',
     fontWeight: 'bold',
-    paddingHorizontal: 100,
+    textAlign: 'center',
+    width: 250,
     paddingVertical: 10
     //Button for Login & Create Account
   },
@@ -65,7 +68,7 @@ function Stacks() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={App} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Create" component={Create}/>
+        <Stack.Screen name="Create" component={newacc}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -73,4 +76,4 @@ function Stacks() {
 }
 
 export default Stacks
-//include export default for all files
+//include export defua

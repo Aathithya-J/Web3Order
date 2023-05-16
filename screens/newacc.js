@@ -1,30 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View,  SafeAreaView, TextInput, Button,TouchableOpacity, TouchableHighlight, } from 'react-native';
+import { StyleSheet, Text, View,  SafeAreaView, TextInput, Button,TouchableOpacity, TouchableHighlight, StatusBar} from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import Login from './Login';
 
-function Login(){
-  const [username, passwd, onChangeText] = React.useState('');
+const Stack = createNativeStackNavigator();
+function newacc(){
+  const [username, passwd,rpasswd, onChangeText] = React.useState('');
+  const navigation = useNavigation()
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Sign in</Text> 
+      <Text style={styles.title}>Create New Account</Text> 
+
       <TextInput
         style={styles.input}
-        placeholder='Username'
+        placeholder='New Username'
         onChangeText={onChangeText}
         value={username}
       />
+
       <TextInput
         style={styles.input}
-        placeholder='Passowrd'
+        placeholder='New Passowrd'
         onChangeText={onChangeText}
         value={passwd}
       />
-      <TouchableOpacity style={styles.radius}>
-        <Text style={styles.button}>Sign in?</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder='Repeat New Passowrd'
+        onChangeText={onChangeText}
+        value={rpasswd}
+      />
+
+      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("")}>
+        <Text style={styles.button}>Create Account?</Text>
       </TouchableOpacity>
       {/*Button for signing in*/}
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -49,7 +62,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderRadius: 13
+    borderRadius: 13,
   },
   button: {
     color: 'white',
@@ -66,5 +79,17 @@ const styles = StyleSheet.create({
     borderWidth: 0
     //Button radiis
   },
+  
 })
-export default Login;
+function Stacks() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+  //Include all screens so as to link them
+}
+
+export default newacc;

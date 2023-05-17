@@ -6,6 +6,7 @@ import Login from './screens/Login';
 import Newacc from './screens/Newacc';
 import Landing from './screens/Landing';
 
+
 const Stack = createNativeStackNavigator();
 function App() {
   const navigation = useNavigation()
@@ -70,7 +71,7 @@ function Stacks() {
         <Stack.Screen name="Home" component={App} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Create" component={Newacc}/>
-        <Stack.Screen name="Landing" component={Landing}/>
+        <Stack.Screen name="Landing" component={Landing} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

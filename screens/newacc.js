@@ -88,7 +88,7 @@ function Stacks() {
     <NavigationContainer>
       <Stack.Navigator>
          <Stack.Screen name="Newacc" component={Newacc}/>
-        <Stack.Screen name="Landing" component={Landing} />
+        <Stack.Screen name="Landing" component={Landing} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

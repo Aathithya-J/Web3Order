@@ -3,9 +3,10 @@ import { StyleSheet, Text, View,  SafeAreaView, TextInput, Button,TouchableOpaci
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import Login from './Login';
+import Landing from './Landing';
 
 const Stack = createNativeStackNavigator();
-function newacc(){
+function Newacc(){
   const [username, passwd,rpasswd, onChangeText] = React.useState('');
   const navigation = useNavigation()
   return (
@@ -33,7 +34,7 @@ function newacc(){
         value={rpasswd}
       />
 
-      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("")}>
+      <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Landing")}>
         <Text style={styles.button}>Create Account?</Text>
       </TouchableOpacity>
       {/*Button for signing in*/}
@@ -80,16 +81,18 @@ const styles = StyleSheet.create({
     //Button radiis
   },
   
-})
+});
+
 function Stacks() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login}/>
+         <Stack.Screen name="Newacc" component={Newacc}/>
+        <Stack.Screen name="Landing" component={Landing} />
       </Stack.Navigator>
     </NavigationContainer>
   );
   //Include all screens so as to link them
 }
 
-export default newacc;
+export default Newacc;

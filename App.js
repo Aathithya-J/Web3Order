@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, I
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
-import newacc from './screens/newacc';
+import Newacc from './screens/Newacc';
+import Landing from './screens/Landing';
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -68,7 +69,8 @@ function Stacks() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={App} options={{headerShown: false}}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Create" component={newacc}/>
+        <Stack.Screen name="Create" component={Newacc}/>
+        <Stack.Screen name="Landing" component={Landing}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

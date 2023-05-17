@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontWeight:700,
     paddingBottom: 20,
     alignSelf:'flex-start',
-    paddingLeft: 20,
+    paddingLeft: 10,
   },
   input:{
     height: 40,

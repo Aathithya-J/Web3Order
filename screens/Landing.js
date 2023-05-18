@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     alignSelf:'flex-start',
     paddingLeft: 10,
+    //Landing Text
   },
   input:{
     height: 40,

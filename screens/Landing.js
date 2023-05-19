@@ -8,6 +8,7 @@ function Landing(){
   const [rpasswd, onChangeText] = React.useState('');
   return (
     <SafeAreaView style={styles.container}>
+      <View style={{flexDirection: 'row'}}>
       <Text style={styles.title}>Landing</Text> 
       <TextInput
         style={styles.input}
@@ -15,6 +16,8 @@ function Landing(){
         onChangeText={onChangeText}
         value={rpasswd}
       />
+            </View>
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize:20,
     fontWeight:700,
-    paddingBottom: 20,
+    paddingTop: 15,
     alignSelf:'flex-start',
     paddingLeft: 10,
     //Landing Text
@@ -42,7 +45,9 @@ const styles = StyleSheet.create({
     borderWidth: 0.9,
     padding: 10,
     borderRadius: 13,
-    alignSelf:'flex-end'
+    alignSelf:'flex-end',
+    backgroundColor: 'brown',
+    color:'white'
   },
 
 })

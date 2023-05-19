@@ -12,7 +12,7 @@ function Newacc(){
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Create New Account</Text> 
-
+      
       <TextInput
         style={styles.input}
         placeholder='New Username'

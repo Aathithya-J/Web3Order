@@ -12,7 +12,7 @@ function Newacc(){
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Create New Account</Text> 
-      
+
       <TextInput
         style={styles.input}
         placeholder='New Username'
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     width: 250,
     margin: 12,
     padding: 10,
-    borderRadius: 13,
+    borderRadius: 10,
+    backgroundColor: '#B08968',
   },
   button: {
     color: 'white',

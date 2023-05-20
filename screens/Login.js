@@ -15,16 +15,21 @@ function Login(){
         onChangeText={onChangeText}
         value={username}
       />
+      {/*Input bar for username*/}
+
       <TextInput
         style={styles.input}
         placeholder='Passowrd'
         onChangeText={onChangeText}
         value={passwd}
       />
+      {/*Input bar for password*/}
+
       <TouchableOpacity style={styles.radius}>
         <Text style={styles.button}>Sign in?</Text>
       </TouchableOpacity>
       {/*Button for signing in*/}
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );

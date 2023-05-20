@@ -19,6 +19,7 @@ function Newacc(){
         onChangeText={onChangeText}
         value={username}
       />
+      {/*Input bar for new username*/}
 
       <TextInput
         style={styles.input}
@@ -26,6 +27,7 @@ function Newacc(){
         onChangeText={onChangeText}
         value={passwd}
       />
+      {/*Input bar for new password*/}
 
       <TextInput
         style={styles.input}
@@ -33,6 +35,7 @@ function Newacc(){
         onChangeText={onChangeText}
         value={rpasswd}
       />
+      {/*Input bar for repeat new password*/}
 
       <TouchableOpacity style={styles.radius} onPress={() => navigation.navigate("Landing")}>
         <Text style={styles.button}>Create Account?</Text>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     
   },
-  input:{
+  input:{ 
     height: 40,
     width: 250,
     margin: 12,

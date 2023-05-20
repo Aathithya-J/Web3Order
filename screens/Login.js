@@ -35,13 +35,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#EDE0D4',
     alignItems: 'center',
     justifyContent: 'center',
+    //the whole screen itself
   },
   title: {
     color: "black",
     fontSize:35,
     fontWeight:700,
     paddingBottom: 20,
-    
+    //title
   },
   input:{
     height: 40,
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     backgroundColor: '#B08968',
+    //input box padding
   },
   button: {
     color: 'white',
